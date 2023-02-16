@@ -12,6 +12,11 @@ def train(
     targets: pd.Series,
     seed: int,
 ) -> XGBRegressor:
+    """
+    Trains a XGBRegressor on a training set.
+    Takes a DataFrame of samples, a Series of targets and a seed for reproducibility.
+    The model is trained through a randomized search with cross validation on the hyperparameter space.
+    """
     regressor = XGBRegressor(random_state=seed)
 
     hyperparameters = {

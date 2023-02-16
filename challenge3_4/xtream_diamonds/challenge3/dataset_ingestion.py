@@ -26,6 +26,11 @@ def _convert_all_to_ordinal(dataset: pd.DataFrame, features: List[str]) -> pd.Da
 
 
 def _clean(dataset: pd.DataFrame):
+    """
+    Cleans a diamonds' dataset:
+    - drops all diamonds with a price less than 0
+    - drop all diamonds with x, y, z equals to 0
+    """
     # remove diamonds with price <= 0
     cleaned_dataset = dataset.drop(dataset[dataset.price <= 0].index)
 
@@ -41,6 +46,13 @@ def _clean(dataset: pd.DataFrame):
 
 
 def prepare(dataset: pd.DataFrame, categorical_features: List[str]) -> pd.DataFrame:
+    """
+    Prepares the dataset to be fed to a tree-based regression model:
+    - x, y, z are dropped because they are correlated among themselves and with carat
+    - categorical features are converted to ordinal integers
+    No normalization is carried out because tree-based algorithms do not need it.
+
+    """
     # remove correlated features
     prepared_dataset = dataset.drop(["x", "y", "z"], axis=1)
 
@@ -51,6 +63,12 @@ def prepare(dataset: pd.DataFrame, categorical_features: List[str]) -> pd.DataFr
 
 
 def ingest(path: str, categorical_features: List[str]) -> pd.DataFrame:
+    """
+    Dataset ingestion pipeline:
+    - read dataset from file
+    - clean dataset from bad samples
+    - prepare dataset for training
+    """
     dataset = _read_dataset(path)
 
     cleaned_dataset = _clean(dataset)
@@ -58,16 +76,3 @@ def ingest(path: str, categorical_features: List[str]) -> pd.DataFrame:
     prepared_dataset = prepare(cleaned_dataset, categorical_features)
 
     return prepared_dataset
-
-
-def split(
-    dataset: pd.DataFrame, target: str, test_size: float, seed: int
-) -> Tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
-    training_set, test_set = train_test_split(
-        dataset, test_size=test_size, random_state=seed
-    )
-    samples_train = training_set.drop([target], axis=1)
-    targets_train = training_set[target]
-    samples_test = test_set.drop([target], axis=1)
-    targets_test = test_set[target]
-    return samples_train, targets_train, samples_test, targets_test

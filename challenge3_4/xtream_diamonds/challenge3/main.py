@@ -1,17 +1,25 @@
-import sys
 from .dataset_ingestion import ingest
 from .dataset_split import split
 from .training import train
 from .serialization import save
 from .evaluation import evaluate
+from .configuration import test_size, seed, target, categorical_features
+from .cli_arguments import parse_cli_arguments
 
 
 def main():
-    test_size = 0.2
-    seed = 0
-    target = "price"
-    dataset_path = sys.argv[1]
-    categorical_features = ["cut", "color", "clarity"]
+    """
+    The assignment-train CLI command runs this function:
+    - parse the dataset path cli argument
+    - cleans the dataset
+    - splits the dataset
+    - trains the model on the training set
+    - evaluates the model on the test set
+    - saves the model as a json file 'model.json'
+    - prints the model score on the test set to the standard output
+    Warning: this function may take several minutes to execute (~ 3 minutes on AMD Ryzen 7 PRO 6850U)
+    """
+    dataset_path = parse_cli_arguments()
 
     dataset = ingest(dataset_path, categorical_features)
 
@@ -23,5 +31,6 @@ def main():
 
     score = evaluate(model, samples_test, targets_test)
 
-    print("Model score: " + str(score))
     save(model, "./model.json")
+
+    print("Model score: " + str(score))

@@ -1,6 +1,4 @@
-from typing import Optional
 from fastapi import FastAPI
-from xgboost import XGBRegressor
 
 from .parsing import parse_address
 from .endpoints import prices_endpoint, root_endpoint
@@ -20,6 +18,13 @@ app.include_router(root_endpoint.router)
 
 
 def main():
+    """
+    The assignment-server cli command executes this function:
+    1. parse cli arguments (model_path, server_address)
+    2. load the model from the given path
+    3. start the web server at the given address
+    """
+
     model_path, server_address = read_cli_arguments()
 
     load_model(model_path)
@@ -31,6 +36,22 @@ def main():
 
 @app.exception_handler(RequestValidationError)
 async def custom_form_validation_error(request, exc):
+    """
+    Custom validation error logic.
+    When a malformed diamond (e.g. missing a feature) is received the user receives a detailed error response.
+    Example, the user sends a malformed diamond:
+    - missing the carat field;
+    - with cut being an unsupport categorical value;
+    - with table not being a float;
+    - missing the depth field.
+    The response is:
+    {"detail":"Invalid request",
+    "errors":
+        {"carat": ["field required"],
+        "cut": ["unexpected value; permitted: 'Ideal', 'Premium', 'Very Good', 'Good', 'Fair'"],
+        "depth": ["field required"]
+        "table": ["value is not a valid float"]}}
+    """
     reformatted_message = defaultdict(list)
     for pydantic_error in exc.errors():
         loc, msg = pydantic_error["loc"], pydantic_error["msg"]
