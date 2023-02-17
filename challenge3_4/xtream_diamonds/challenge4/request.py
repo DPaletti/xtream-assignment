@@ -7,6 +7,10 @@ from .parsing import parse_address
 
 
 def post():
+    """
+    This function is executed by the assignment-price CLI command.
+    Create a post with a given diamond
+    """
     parser = argparse.ArgumentParser(
         prog="xtream-assignments-diamond",
         description="REST API Server for pricing diamonds",
