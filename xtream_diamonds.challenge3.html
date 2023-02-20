@@ -11,15 +11,14 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="xtream_diamonds.challenge4 package" href="xtream_diamonds.challenge4.html" />
-    <link rel="prev" title="xtream_diamonds package" href="xtream_diamonds.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,19 +41,9 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">xtream_diamonds</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="xtream_diamonds.html">xtream_diamonds package</a><ul class="current">
-<li class="toctree-l3 current"><a class="reference internal" href="xtream_diamonds.html#subpackages">Subpackages</a><ul class="current">
-<li class="toctree-l4 current"><a class="current reference internal" href="#">xtream_diamonds.challenge3 package</a></li>
-<li class="toctree-l4"><a class="reference internal" href="xtream_diamonds.challenge4.html">xtream_diamonds.challenge4 package</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="xtream_diamonds.html#module-xtream_diamonds">Module contents</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="challenge3.html">Challenge 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="challenge4.html">Challenge 4</a></li>
 </ul>
 
         </div>
@@ -71,8 +60,6 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-          <li class="breadcrumb-item"><a href="modules.html">xtream_diamonds</a></li>
-          <li class="breadcrumb-item"><a href="xtream_diamonds.html">xtream_diamonds package</a></li>
       <li class="breadcrumb-item active">xtream_diamonds.challenge3 package</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/xtream_diamonds.challenge3.rst.txt" rel="nofollow"> View page source</a>
@@ -92,7 +79,7 @@
 <span id="xtream-diamonds-challenge3-cli-arguments-module"></span><h2>xtream_diamonds.challenge3.cli_arguments module<a class="headerlink" href="#module-xtream_diamonds.challenge3.cli_arguments" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge3.cli_arguments.parse_cli_arguments">
-<span class="sig-prename descclassname"><span class="pre">xtream_diamonds.challenge3.cli_arguments.</span></span><span class="sig-name descname"><span class="pre">parse_cli_arguments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/cli_arguments.html#parse_cli_arguments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.cli_arguments.parse_cli_arguments" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">parse_cli_arguments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/cli_arguments.html#parse_cli_arguments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.cli_arguments.parse_cli_arguments" title="Permalink to this definition"></a></dt>
 <dd><p>Parse the dataset path as a position CLI argument</p>
 </dd></dl>
 
@@ -104,7 +91,7 @@
 <span id="xtream-diamonds-challenge3-dataset-ingestion-module"></span><h2>xtream_diamonds.challenge3.dataset_ingestion module<a class="headerlink" href="#module-xtream_diamonds.challenge3.dataset_ingestion" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge3.dataset_ingestion.ingest">
-<span class="sig-prename descclassname"><span class="pre">xtream_diamonds.challenge3.dataset_ingestion.</span></span><span class="sig-name descname"><span class="pre">ingest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/dataset_ingestion.html#ingest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.dataset_ingestion.ingest" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">ingest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/dataset_ingestion.html#ingest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.dataset_ingestion.ingest" title="Permalink to this definition"></a></dt>
 <dd><p>Dataset ingestion pipeline:
 - read dataset from file
 - clean dataset from bad samples
@@ -113,7 +100,7 @@
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge3.dataset_ingestion.prepare">
-<span class="sig-prename descclassname"><span class="pre">xtream_diamonds.challenge3.dataset_ingestion.</span></span><span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/dataset_ingestion.html#prepare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.dataset_ingestion.prepare" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/dataset_ingestion.html#prepare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.dataset_ingestion.prepare" title="Permalink to this definition"></a></dt>
 <dd><p>Prepares the dataset to be fed to a tree-based regression model:
 - x, y, z are dropped because they are correlated among themselves and with carat
 - categorical features are converted to ordinal integers
@@ -125,7 +112,7 @@ No normalization is carried out because tree-based algorithms do not need it.</p
 <span id="xtream-diamonds-challenge3-dataset-split-module"></span><h2>xtream_diamonds.challenge3.dataset_split module<a class="headerlink" href="#module-xtream_diamonds.challenge3.dataset_split" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge3.dataset_split.split">
-<span class="sig-prename descclassname"><span class="pre">xtream_diamonds.challenge3.dataset_split.</span></span><span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Series</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/dataset_split.html#split"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.dataset_split.split" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">test_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Series</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">DataFrame</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Series</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/dataset_split.html#split"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.dataset_split.split" title="Permalink to this definition"></a></dt>
 <dd><p>Split a dataset in train and test with a given test size and a fixed seed for reproducibility.
 The train and test set are then split in a samples DataFrame and a corresponding target</p>
 </dd></dl>
@@ -135,7 +122,7 @@ The train and test set are then split in a samples DataFrame and a corresponding
 <span id="xtream-diamonds-challenge3-evaluation-module"></span><h2>xtream_diamonds.challenge3.evaluation module<a class="headerlink" href="#module-xtream_diamonds.challenge3.evaluation" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge3.evaluation.evaluate">
-<span class="sig-prename descclassname"><span class="pre">xtream_diamonds.challenge3.evaluation.</span></span><span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">XGBRegressor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/evaluation.html#evaluate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.evaluation.evaluate" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">evaluate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">XGBRegressor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/evaluation.html#evaluate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.evaluation.evaluate" title="Permalink to this definition"></a></dt>
 <dd><p>A XGBRegressor gets evaluated on a DataFrame of samples and a corresponding Series of targets</p>
 </dd></dl>
 
@@ -144,7 +131,7 @@ The train and test set are then split in a samples DataFrame and a corresponding
 <span id="xtream-diamonds-challenge3-main-module"></span><h2>xtream_diamonds.challenge3.main module<a class="headerlink" href="#module-xtream_diamonds.challenge3.main" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge3.main.main">
-<span class="sig-prename descclassname"><span class="pre">xtream_diamonds.challenge3.main.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/main.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.main.main" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/main.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.main.main" title="Permalink to this definition"></a></dt>
 <dd><p>The assignment-train CLI command runs this function:
 - parse the dataset path cli argument
 - cleans the dataset
@@ -161,7 +148,7 @@ Warning: this function may take several minutes to execute (~1 minute on AMD Ryz
 <span id="xtream-diamonds-challenge3-serialization-module"></span><h2>xtream_diamonds.challenge3.serialization module<a class="headerlink" href="#module-xtream_diamonds.challenge3.serialization" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge3.serialization.save">
-<span class="sig-prename descclassname"><span class="pre">xtream_diamonds.challenge3.serialization.</span></span><span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">XGBRegressor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/serialization.html#save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.serialization.save" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">save</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">XGBRegressor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/serialization.html#save"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.serialization.save" title="Permalink to this definition"></a></dt>
 <dd><p>Save a XGBRegressor to file, may be txt or json.</p>
 </dd></dl>
 
@@ -170,7 +157,7 @@ Warning: this function may take several minutes to execute (~1 minute on AMD Ryz
 <span id="xtream-diamonds-challenge3-training-module"></span><h2>xtream_diamonds.challenge3.training module<a class="headerlink" href="#module-xtream_diamonds.challenge3.training" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge3.training.train">
-<span class="sig-prename descclassname"><span class="pre">xtream_diamonds.challenge3.training.</span></span><span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">XGBRegressor</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/training.html#train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.training.train" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">train</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">samples</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">targets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">XGBRegressor</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/training.html#train"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.training.train" title="Permalink to this definition"></a></dt>
 <dd><p>Trains a XGBRegressor on a training set.
 Takes a DataFrame of samples, a Series of targets and a seed for reproducibility.
 The model is trained through a randomized search with cross validation on the hyperparameter space.</p>
@@ -185,10 +172,7 @@ The model is trained through a randomized search with cross validation on the hy
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="xtream_diamonds.html" class="btn btn-neutral float-left" title="xtream_diamonds package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="xtream_diamonds.challenge4.html" class="btn btn-neutral float-right" title="xtream_diamonds.challenge4 package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

@@ -10,10 +10,11 @@
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
-        <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" /> 
@@ -40,7 +41,8 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../../modules.html">xtream_diamonds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../challenge3.html">Challenge 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../challenge4.html">Challenge 4</a></li>
 </ul>
 
         </div>
@@ -110,17 +112,20 @@
 <span class="sd">    Custom validation error logic.</span>
 <span class="sd">    When a malformed diamond (e.g. missing a feature) is received the user receives a detailed error response.</span>
 <span class="sd">    Example, the user sends a malformed diamond:</span>
+
 <span class="sd">    - missing the carat field;</span>
 <span class="sd">    - with cut being an unsupport categorical value;</span>
 <span class="sd">    - with table not being a float;</span>
 <span class="sd">    - missing the depth field.</span>
+
 <span class="sd">    The response is:</span>
-<span class="sd">    {&quot;detail&quot;:&quot;Invalid request&quot;,</span>
+
+<span class="sd">    `{&quot;detail&quot;:&quot;Invalid request&quot;,</span>
 <span class="sd">    &quot;errors&quot;:</span>
-<span class="sd">        {&quot;carat&quot;: [&quot;field required&quot;],</span>
-<span class="sd">        &quot;cut&quot;: [&quot;unexpected value; permitted: &#39;Ideal&#39;, &#39;Premium&#39;, &#39;Very Good&#39;, &#39;Good&#39;, &#39;Fair&#39;&quot;],</span>
-<span class="sd">        &quot;depth&quot;: [&quot;field required&quot;]</span>
-<span class="sd">        &quot;table&quot;: [&quot;value is not a valid float&quot;]}}</span>
+<span class="sd">    {&quot;carat&quot;: [&quot;field required&quot;],</span>
+<span class="sd">    &quot;cut&quot;: [&quot;unexpected value; permitted: &#39;Ideal&#39;, &#39;Premium&#39;, &#39;Very Good&#39;, &#39;Good&#39;, &#39;Fair&#39;&quot;],</span>
+<span class="sd">    &quot;depth&quot;: [&quot;field required&quot;]</span>
+<span class="sd">    &quot;table&quot;: [&quot;value is not a valid float&quot;]}}`</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">reformatted_message</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">pydantic_error</span> <span class="ow">in</span> <span class="n">exc</span><span class="o">.</span><span class="n">errors</span><span class="p">():</span>

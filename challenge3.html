@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search &mdash; Xtream Assignment 0.1 documentation</title>
+  <title>Challenge 3 &mdash; Xtream Assignment 0.1 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -17,10 +17,10 @@
         <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Challenge 4" href="challenge4.html" />
+    <link rel="prev" title="Welcome to Xtream Assignment’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +35,7 @@
             Xtream Assignment
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -43,8 +43,12 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="challenge3.html">Challenge 3</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Challenge 3</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#training-a-model">Training a Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#api-documentation">API Documentation</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="challenge4.html">Challenge 4</a></li>
 </ul>
 
@@ -62,8 +66,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Search</li>
+      <li class="breadcrumb-item active">Challenge 3</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/challenge3.md.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -71,22 +76,30 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <section id="challenge-3">
+<h1>Challenge 3<a class="headerlink" href="#challenge-3" title="Permalink to this heading"></a></h1>
+<section id="training-a-model">
+<h2>Training a Model<a class="headerlink" href="#training-a-model" title="Permalink to this heading"></a></h2>
+<p>This module exposes <code class="docutils literal notranslate"><span class="pre">assignment-train</span></code>.</p>
+<p>This command allows you to train an instance of a XGBoost regression model given a dataset. This command takes only one positional argument which is the path to the dataset:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>assignment-train<span class="w"> </span>./diamonds.csv
+</pre></div>
+</div>
+<p>After running this command the model will be saved as <code class="docutils literal notranslate"><span class="pre">model.json</span></code> and will be ready to be used by challenge 4. This command also returns the accuracy the model achieves by splitting the dataset in training (80%) and test (20%) randomly.</p>
+</section>
+<section id="api-documentation">
+<h2>API Documentation<a class="headerlink" href="#api-documentation" title="Permalink to this heading"></a></h2>
+<p>See <a class="reference internal" href="xtream_diamonds.challenge3.html"><span class="doc std std-doc">challenge 3 API docs</span></a> to get a sense of the implementation.</p>
+</section>
+</section>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to Xtream Assignment’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="challenge4.html" class="btn btn-neutral float-right" title="Challenge 4" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
@@ -108,14 +121,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-  <script>
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script id="searchindexloader"></script>
-   
-
+  </script> 
 
 </body>
 </html>

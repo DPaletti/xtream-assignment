@@ -6,11 +6,17 @@
 Welcome to Xtream Assignment's documentation!
 =============================================
 
+.. include:: ./index.md
+   :parser: myst_parser.sphinx_
+
 .. toctree::
+   :glob:
    :maxdepth: 2
    :caption: Contents:
 
-   modules
+   challenge3
+   challenge4
+
 
 
 
