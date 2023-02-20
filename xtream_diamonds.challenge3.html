@@ -80,31 +80,53 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge3.cli_arguments.parse_cli_arguments">
 <span class="sig-name descname"><span class="pre">parse_cli_arguments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/cli_arguments.html#parse_cli_arguments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.cli_arguments.parse_cli_arguments" title="Permalink to this definition"></a></dt>
-<dd><p>Parse the dataset path as a position CLI argument</p>
+<dd><p>Parse the dataset path as a positional CLI argument</p>
 </dd></dl>
 
 </section>
 <section id="module-xtream_diamonds.challenge3.configuration">
 <span id="xtream-diamonds-challenge3-configuration-module"></span><h2>xtream_diamonds.challenge3.configuration module<a class="headerlink" href="#module-xtream_diamonds.challenge3.configuration" title="Permalink to this heading"></a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="xtream_diamonds.challenge3.configuration.seed">
+<span class="sig-name descname"><span class="pre">seed</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0</span></em><a class="headerlink" href="#xtream_diamonds.challenge3.configuration.seed" title="Permalink to this definition"></a></dt>
+<dd><p>Random generator seed for reproducibility</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="xtream_diamonds.challenge3.configuration.target">
+<span class="sig-name descname"><span class="pre">target</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'price'</span></em><a class="headerlink" href="#xtream_diamonds.challenge3.configuration.target" title="Permalink to this definition"></a></dt>
+<dd><p>Target variable name for the regressor</p>
+</dd></dl>
+
+<dl class="py data">
+<dt class="sig sig-object py" id="xtream_diamonds.challenge3.configuration.test_size">
+<span class="sig-name descname"><span class="pre">test_size</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">0.2</span></em><a class="headerlink" href="#xtream_diamonds.challenge3.configuration.test_size" title="Permalink to this definition"></a></dt>
+<dd><p>Size of the test set (from 0 to 1) where 1 means 100%</p>
+</dd></dl>
+
 </section>
 <section id="module-xtream_diamonds.challenge3.dataset_ingestion">
 <span id="xtream-diamonds-challenge3-dataset-ingestion-module"></span><h2>xtream_diamonds.challenge3.dataset_ingestion module<a class="headerlink" href="#module-xtream_diamonds.challenge3.dataset_ingestion" title="Permalink to this heading"></a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge3.dataset_ingestion.ingest">
 <span class="sig-name descname"><span class="pre">ingest</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/dataset_ingestion.html#ingest"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.dataset_ingestion.ingest" title="Permalink to this definition"></a></dt>
-<dd><p>Dataset ingestion pipeline:
-- read dataset from file
-- clean dataset from bad samples
-- prepare dataset for training</p>
+<dd><p>Dataset ingestion pipeline:</p>
+<ul class="simple">
+<li><p>read dataset from file</p></li>
+<li><p>clean dataset from bad samples</p></li>
+<li><p>prepare dataset for training</p></li>
+</ul>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge3.dataset_ingestion.prepare">
 <span class="sig-name descname"><span class="pre">prepare</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataset</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge3/dataset_ingestion.html#prepare"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge3.dataset_ingestion.prepare" title="Permalink to this definition"></a></dt>
-<dd><p>Prepares the dataset to be fed to a tree-based regression model:
-- x, y, z are dropped because they are correlated among themselves and with carat
-- categorical features are converted to ordinal integers
-No normalization is carried out because tree-based algorithms do not need it.</p>
+<dd><p>Prepares the dataset to be fed to a tree-based regression model:</p>
+<ul class="simple">
+<li><p>x, y, z are dropped because they are correlated among themselves and with carat;</p></li>
+<li><p>categorical features are converted to ordinal integers.</p></li>
+</ul>
+<p>No normalization is carried out because tree-based algorithms do not need it.</p>
 </dd></dl>
 
 </section>

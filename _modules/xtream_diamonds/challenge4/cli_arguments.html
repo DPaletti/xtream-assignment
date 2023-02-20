@@ -77,8 +77,10 @@
 <div class="viewcode-block" id="read_cli_arguments"><a class="viewcode-back" href="../../../xtream_diamonds.challenge4.html#xtream_diamonds.challenge4.cli_arguments.read_cli_arguments">[docs]</a><span class="k">def</span> <span class="nf">read_cli_arguments</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Read CLI arguments:</span>
+
 <span class="sd">    - --model/-m path to the json-serialized model</span>
 <span class="sd">    - --address/-a server address</span>
+
 <span class="sd">    Returns a tuple (model_path, server_address)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span>

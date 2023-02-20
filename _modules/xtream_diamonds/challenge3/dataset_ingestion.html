@@ -98,6 +98,7 @@
 <span class="k">def</span> <span class="nf">_clean</span><span class="p">(</span><span class="n">dataset</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Cleans a diamonds&#39; dataset:</span>
+
 <span class="sd">    - drops all diamonds with a price less than 0</span>
 <span class="sd">    - drop all diamonds with x, y, z equals to 0</span>
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -118,8 +119,10 @@
 <div class="viewcode-block" id="prepare"><a class="viewcode-back" href="../../../xtream_diamonds.challenge3.html#xtream_diamonds.challenge3.dataset_ingestion.prepare">[docs]</a><span class="k">def</span> <span class="nf">prepare</span><span class="p">(</span><span class="n">dataset</span><span class="p">:</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Prepares the dataset to be fed to a tree-based regression model:</span>
-<span class="sd">    - x, y, z are dropped because they are correlated among themselves and with carat</span>
-<span class="sd">    - categorical features are converted to ordinal integers</span>
+
+<span class="sd">    - x, y, z are dropped because they are correlated among themselves and with carat;</span>
+<span class="sd">    - categorical features are converted to ordinal integers.</span>
+
 <span class="sd">    No normalization is carried out because tree-based algorithms do not need it.</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
@@ -135,6 +138,7 @@
 <div class="viewcode-block" id="ingest"><a class="viewcode-back" href="../../../xtream_diamonds.challenge3.html#xtream_diamonds.challenge3.dataset_ingestion.ingest">[docs]</a><span class="k">def</span> <span class="nf">ingest</span><span class="p">(</span><span class="n">path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Dataset ingestion pipeline:</span>
+
 <span class="sd">    - read dataset from file</span>
 <span class="sd">    - clean dataset from bad samples</span>
 <span class="sd">    - prepare dataset for training</span>
