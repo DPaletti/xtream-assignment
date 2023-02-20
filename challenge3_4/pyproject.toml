@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "xtream-diamonds"
-version = "0.2.0"
+version = "0.3.0"
 description = "Xtream Data Science Interview Assignment"
 authors = ["dpaletti <dpaletti@gmail.com>"]
 license = "MIT"

@@ -3,7 +3,7 @@ from .dataset_split import split
 from .training import train
 from .serialization import save
 from .evaluation import evaluate
-from .configuration import test_size, seed, target, categorical_features
+from .configuration import test_size, seed, target
 from .cli_arguments import parse_cli_arguments
 
 
@@ -17,11 +17,11 @@ def main():
     - evaluates the model on the test set
     - saves the model as a json file 'model.json'
     - prints the model score on the test set to the standard output
-    Warning: this function may take several minutes to execute (~ 3 minutes on AMD Ryzen 7 PRO 6850U)
+    Warning: this function may take several minutes to execute (~1 minute on AMD Ryzen 7 PRO 6850U)
     """
     dataset_path = parse_cli_arguments()
 
-    dataset = ingest(dataset_path, categorical_features)
+    dataset = ingest(dataset_path)
 
     samples_train, targets_train, samples_test, targets_test = split(
         dataset, target, test_size, seed

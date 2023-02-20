@@ -21,13 +21,17 @@ def train(
 
     hyperparameters = {
         # learning rate
-        "eta": np.linspace(0, 1, endpoint=False)[1::],
+        "eta": np.geomspace(0.1, 1, endpoint=False),
         # L1 regularization
         "alpha": np.linspace(0, 1),
         # L2 regularization
         "lambda": np.linspace(0, 1),
         # subsample rate prior to growing the trees
-        "subsample": np.linspace(0.5, 1),
+        "subsample": np.linspace(0.1, 1),
+        # max_depth set low for interpretability
+        "max_depth": [3],
+        # number of trees (preferring lower estimators solutions)
+        "n_estimators": list(range(1, 10)),
     }
 
     hyperparameter_search = RandomizedSearchCV(

@@ -1,8 +1,7 @@
 import pandas as pd
-from typing import List, Tuple
+from typing import List, Dict
 from functools import reduce
-
-from sklearn.model_selection import train_test_split
+from .categorical_mappings import mappings
 
 
 def _read_dataset(path: str) -> pd.DataFrame:
@@ -10,19 +9,18 @@ def _read_dataset(path: str) -> pd.DataFrame:
     return pd.read_csv(path)
 
 
-def _convert_to_ordinal(dataset: pd.DataFrame, feature: str) -> pd.DataFrame:
+def _convert_to_ordinal(
+    dataset: pd.DataFrame, feature_map: Dict[str, int]
+) -> pd.DataFrame:
     """Convert a categorical feature to ordinal in a given dataset"""
-    categorical_values = dataset[feature].unique()
-    ordinal_map = {
-        categorical_value: ordinal_value
-        for ordinal_value, categorical_value in enumerate(categorical_values)
-    }
-    return dataset.replace(ordinal_map)
+    return dataset.replace(feature_map)
 
 
-def _convert_all_to_ordinal(dataset: pd.DataFrame, features: List[str]) -> pd.DataFrame:
+def _convert_all_to_ordinal(
+    dataset: pd.DataFrame, feature_maps: List[Dict[str, int]]
+) -> pd.DataFrame:
     """Convert a list of categorical features to ordinal in a given dataset"""
-    return reduce(_convert_to_ordinal, features, dataset)
+    return reduce(_convert_to_ordinal, feature_maps, dataset)
 
 
 def _clean(dataset: pd.DataFrame):
@@ -45,7 +43,7 @@ def _clean(dataset: pd.DataFrame):
     return cleaned_dataset
 
 
-def prepare(dataset: pd.DataFrame, categorical_features: List[str]) -> pd.DataFrame:
+def prepare(dataset: pd.DataFrame) -> pd.DataFrame:
     """
     Prepares the dataset to be fed to a tree-based regression model:
     - x, y, z are dropped because they are correlated among themselves and with carat
@@ -57,12 +55,12 @@ def prepare(dataset: pd.DataFrame, categorical_features: List[str]) -> pd.DataFr
     prepared_dataset = dataset.drop(["x", "y", "z"], axis=1)
 
     # convert ordinal values to numeric
-    prepared_dataset = _convert_all_to_ordinal(prepared_dataset, categorical_features)
+    prepared_dataset = _convert_all_to_ordinal(prepared_dataset, mappings)
 
     return prepared_dataset
 
 
-def ingest(path: str, categorical_features: List[str]) -> pd.DataFrame:
+def ingest(path: str) -> pd.DataFrame:
     """
     Dataset ingestion pipeline:
     - read dataset from file
@@ -73,6 +71,6 @@ def ingest(path: str, categorical_features: List[str]) -> pd.DataFrame:
 
     cleaned_dataset = _clean(dataset)
 
-    prepared_dataset = prepare(cleaned_dataset, categorical_features)
+    prepared_dataset = prepare(cleaned_dataset)
 
     return prepared_dataset

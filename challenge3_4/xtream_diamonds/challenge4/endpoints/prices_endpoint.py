@@ -17,7 +17,6 @@ async def get_price(diamond: Diamond) -> float:
     if model is None:
         raise Exception("Please load the model during startup")
 
-    categorical_features = ["cut", "color", "clarity"]
     diamond_dataframe = pd.DataFrame(dict(diamond), index=[0])
 
-    return model.predict(prepare(diamond_dataframe, categorical_features))
+    return model.predict(prepare(diamond_dataframe))
