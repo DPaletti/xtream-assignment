@@ -164,4 +164,86 @@ Now they want to embed your model in a web application.
 ---
 
 ## How to run
-Please fill this section as part of the assignment.
+### Challenge 1 and 2
+Both challenges are hosted on Google Colab:
+
+- [challenge 1](https://colab.research.google.com/drive/1yHl4ymnnhYKh9QwEorJ4ZNy-SYo6zCAu?usp=sharing)
+- [challenge 2](https://colab.research.google.com/drive/1mjqtI-oCDJYSlU2jiTFXdaSPdlytIeDB?usp=sharing)
+
+### Challenge 3 and 4
+Both challenges are packaged as `xtream-diamonds`, python >= 3.8 required:
+
+```bash
+pip install xtream-diamonds
+```
+
+Please make sure that `$HOME/.local/bin` is on `PATH` else add the following to `.bashrc`:
+
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+
+This package exposes 3 commands:
+- `assignment-train`: trains an instance of the model on a dataset
+- `assignment-server`: runs a server providing diamond prices
+- `assignment-price`: asks the server the price of a given diamond
+
+#### Train the model
+`assignment-train` needs one positional argument that is the path to the dataset on which to train the model:
+```bash
+assignment-train <path/to/dataset.csv>
+```
+This command will take a couple of minutes to execute at most.
+
+After the execution is over you will find a `model.json` file in the directory in which you ran the command. On the standard output you will find the accuracy achieved by the model.
+
+#### Run the Server
+`assignment-server` needs two keyword arguments which are the path to the `model.json` file and the address on which to start the server:
+
+``` bash
+assignment-server --model <path/to/model.json> --address 127.0.0.1:8000
+```
+In the server address make sure to specify both the host address and the port. Once the server is up keep this terminal open and open a new one to start pricing diamonds.
+
+#### Price Diamonds
+You can either make POST requests to the `/prices` endpoint yourself or use `assignment-price` which does it for you. Any POST request must contain a diamond to price specified in JSON format:
+
+``` json
+{
+    "carat": 1.1,
+    "cut": "Ideal",
+    "color": "H",
+    "clarity": "SI2",
+    "depth": 62.0,
+    "table": 55.0,
+    "x": 6.61,
+    "y": 6.65,
+    "z": 4.11
+}
+```
+After you specified your diamond you can save it as a JSON file (e.g. diamond.json). At this point you can make the POST request through our utility:
+
+``` sh
+assignment-price --diamond <path/to/diamond.json> --address 127.0.0.1:8000
+```
+
+##### Making the POST Request Yourself
+If making the POST yourself make sure to add diamond as a JSON payload. 
+An easy way to make the request yourself is through the `requests` package:
+
+``` sh
+pip install requests
+```
+Then, open the JSON diamond and send the POST request to the server with JSON payload:
+``` python
+    import requests
+    import json
+    
+    diamond = json.load(open(<path/to/diamond.json>))
+    price = requests.post(
+        "http://127.0.0.1:8000/prices", json=diamond
+    )
+```
+
+#### API Documentation
+To get an idea of the implementation of challenge 3 and 4 take a look at the [documentation](https://danielepaletti.com/xtream-assignment).
