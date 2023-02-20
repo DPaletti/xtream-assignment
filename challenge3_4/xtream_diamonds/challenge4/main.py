@@ -40,17 +40,20 @@ async def custom_form_validation_error(request, exc):
     Custom validation error logic.
     When a malformed diamond (e.g. missing a feature) is received the user receives a detailed error response.
     Example, the user sends a malformed diamond:
+
     - missing the carat field;
     - with cut being an unsupport categorical value;
     - with table not being a float;
     - missing the depth field.
+
     The response is:
-    {"detail":"Invalid request",
+
+    `{"detail":"Invalid request",
     "errors":
-        {"carat": ["field required"],
-        "cut": ["unexpected value; permitted: 'Ideal', 'Premium', 'Very Good', 'Good', 'Fair'"],
-        "depth": ["field required"]
-        "table": ["value is not a valid float"]}}
+    {"carat": ["field required"],
+    "cut": ["unexpected value; permitted: 'Ideal', 'Premium', 'Very Good', 'Good', 'Fair'"],
+    "depth": ["field required"]
+    "table": ["value is not a valid float"]}}`
     """
     reformatted_message = defaultdict(list)
     for pydantic_error in exc.errors():
