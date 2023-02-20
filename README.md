@@ -250,7 +250,7 @@ Then, open the JSON diamond and send the POST request to the server with JSON pa
 #### API Documentation
 To get an idea of the implementation of challenge 3 and 4 take a look at the [documentation](https://danielepaletti.com/xtream-assignment).
 
-#### Troubleshooting
+### Troubleshooting
 Check if the installation went well by running:
 
 ``` bash
