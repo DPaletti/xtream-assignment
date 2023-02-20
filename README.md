@@ -177,16 +177,18 @@ Both challenges are packaged as `xtream-diamonds`, python >= 3.8 required:
 pip install xtream-diamonds
 ```
 
-Please make sure that `$HOME/.local/bin` is on `PATH` else add the following to `.bashrc`:
-
-```bash
-export PATH="$HOME/.local/bin:$PATH"
-```
-
 This package exposes 3 commands:
 - `assignment-train`: trains an instance of the model on a dataset
 - `assignment-server`: runs a server providing diamond prices
 - `assignment-price`: asks the server the price of a given diamond
+
+Check if the installation went well by running:
+
+``` bash
+assignment-server --help
+```
+If you see `command not found` something is wrong, check the [troubleshooting section](#Troubleshooting).
+
 
 #### Train the model
 `assignment-train` needs one positional argument that is the path to the dataset on which to train the model:
@@ -247,3 +249,25 @@ Then, open the JSON diamond and send the POST request to the server with JSON pa
 
 #### API Documentation
 To get an idea of the implementation of challenge 3 and 4 take a look at the [documentation](https://danielepaletti.com/xtream-assignment).
+
+#### Troubleshooting
+Check if the installation went well by running:
+
+``` bash
+assignment-server --help
+```
+If you see `command not found` something is wrong.
+
+Most likely you need to add "$HOME/.local/bin" to your path, which is the directory where the executable resides:
+``` bash
+echo "export PATH=\$HOME/.local/bin:\$PATH" >> ~/.bashrc
+source ~/.bashrc
+```
+
+Now try again to run:
+
+``` bash
+assignment-server --help
+```
+
+You should be good to go.
