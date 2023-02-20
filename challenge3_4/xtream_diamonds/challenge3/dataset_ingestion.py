@@ -26,6 +26,7 @@ def _convert_all_to_ordinal(
 def _clean(dataset: pd.DataFrame):
     """
     Cleans a diamonds' dataset:
+
     - drops all diamonds with a price less than 0
     - drop all diamonds with x, y, z equals to 0
     """
@@ -46,8 +47,10 @@ def _clean(dataset: pd.DataFrame):
 def prepare(dataset: pd.DataFrame) -> pd.DataFrame:
     """
     Prepares the dataset to be fed to a tree-based regression model:
-    - x, y, z are dropped because they are correlated among themselves and with carat
-    - categorical features are converted to ordinal integers
+
+    - x, y, z are dropped because they are correlated among themselves and with carat;
+    - categorical features are converted to ordinal integers.
+
     No normalization is carried out because tree-based algorithms do not need it.
 
     """
@@ -63,6 +66,7 @@ def prepare(dataset: pd.DataFrame) -> pd.DataFrame:
 def ingest(path: str) -> pd.DataFrame:
     """
     Dataset ingestion pipeline:
+
     - read dataset from file
     - clean dataset from bad samples
     - prepare dataset for training

@@ -80,10 +80,12 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge4.cli_arguments.read_cli_arguments">
 <span class="sig-name descname"><span class="pre">read_cli_arguments</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge4/cli_arguments.html#read_cli_arguments"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge4.cli_arguments.read_cli_arguments" title="Permalink to this definition"></a></dt>
-<dd><p>Read CLI arguments:
-- –model/-m path to the json-serialized model
-- –address/-a server address
-Returns a tuple (model_path, server_address)</p>
+<dd><p>Read CLI arguments:</p>
+<ul class="simple">
+<li><p>–model/-m path to the json-serialized model</p></li>
+<li><p>–address/-a server address</p></li>
+</ul>
+<p>Returns a tuple (model_path, server_address)</p>
 </dd></dl>
 
 </section>
@@ -170,10 +172,12 @@ Example, the user sends a malformed diamond:</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="xtream_diamonds.challenge4.main.main">
 <span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/xtream_diamonds/challenge4/main.html#main"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge4.main.main" title="Permalink to this definition"></a></dt>
-<dd><p>The assignment-server cli command executes this function:
-1. parse cli arguments (model_path, server_address)
-2. load the model from the given path
-3. start the web server at the given address</p>
+<dd><p>The assignment-server cli command executes this function:</p>
+<ol class="arabic simple">
+<li><p>parse cli arguments (model_path, server_address)</p></li>
+<li><p>load the model from the given path</p></li>
+<li><p>start the web server at the given address</p></li>
+</ol>
 </dd></dl>
 
 </section>
@@ -199,10 +203,12 @@ If the model has not yet been loaded returns None</p>
 <dt class="sig sig-object py" id="xtream_diamonds.challenge4.parsing.parse_address">
 <span class="sig-name descname"><span class="pre">parse_address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/xtream_diamonds/challenge4/parsing.html#parse_address"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#xtream_diamonds.challenge4.parsing.parse_address" title="Permalink to this definition"></a></dt>
 <dd><p>Takes a full ip address and returns host address and port.
-The allowed address formats are:
-- 127.0.0.1:8000
-- <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>
-- <a class="reference external" href="https://127.0.0.1:8000">https://127.0.0.1:8000</a></p>
+The allowed address formats are:</p>
+<ul class="simple">
+<li><p>127.0.0.1:8000</p></li>
+<li><p><a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a></p></li>
+<li><p><a class="reference external" href="https://127.0.0.1:8000">https://127.0.0.1:8000</a></p></li>
+</ul>
 </dd></dl>
 
 </section>

@@ -5,8 +5,10 @@ from typing import Tuple
 def read_cli_arguments() -> Tuple[str, str]:
     """
     Read CLI arguments:
+
     - --model/-m path to the json-serialized model
     - --address/-a server address
+
     Returns a tuple (model_path, server_address)
     """
     parser = argparse.ArgumentParser(

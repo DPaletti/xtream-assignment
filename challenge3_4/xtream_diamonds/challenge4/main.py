@@ -20,6 +20,7 @@ app.include_router(root_endpoint.router)
 def main():
     """
     The assignment-server cli command executes this function:
+
     1. parse cli arguments (model_path, server_address)
     2. load the model from the given path
     3. start the web server at the given address

@@ -3,7 +3,7 @@ import sys
 
 def parse_cli_arguments():
     """
-    Parse the dataset path as a position CLI argument
+    Parse the dataset path as a positional CLI argument
     """
     try:
         return sys.argv[1]
