@@ -73,7 +73,7 @@
 <span class="kn">from</span> <span class="nn">.training</span> <span class="kn">import</span> <span class="n">train</span>
 <span class="kn">from</span> <span class="nn">.serialization</span> <span class="kn">import</span> <span class="n">save</span>
 <span class="kn">from</span> <span class="nn">.evaluation</span> <span class="kn">import</span> <span class="n">evaluate</span>
-<span class="kn">from</span> <span class="nn">.configuration</span> <span class="kn">import</span> <span class="n">test_size</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">categorical_features</span>
+<span class="kn">from</span> <span class="nn">.configuration</span> <span class="kn">import</span> <span class="n">test_size</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span> <span class="n">target</span>
 <span class="kn">from</span> <span class="nn">.cli_arguments</span> <span class="kn">import</span> <span class="n">parse_cli_arguments</span>
 
 
@@ -87,11 +87,11 @@
 <span class="sd">    - evaluates the model on the test set</span>
 <span class="sd">    - saves the model as a json file &#39;model.json&#39;</span>
 <span class="sd">    - prints the model score on the test set to the standard output</span>
-<span class="sd">    Warning: this function may take several minutes to execute (~ 3 minutes on AMD Ryzen 7 PRO 6850U)</span>
+<span class="sd">    Warning: this function may take several minutes to execute (~1 minute on AMD Ryzen 7 PRO 6850U)</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">dataset_path</span> <span class="o">=</span> <span class="n">parse_cli_arguments</span><span class="p">()</span>
 
-    <span class="n">dataset</span> <span class="o">=</span> <span class="n">ingest</span><span class="p">(</span><span class="n">dataset_path</span><span class="p">,</span> <span class="n">categorical_features</span><span class="p">)</span>
+    <span class="n">dataset</span> <span class="o">=</span> <span class="n">ingest</span><span class="p">(</span><span class="n">dataset_path</span><span class="p">)</span>
 
     <span class="n">samples_train</span><span class="p">,</span> <span class="n">targets_train</span><span class="p">,</span> <span class="n">samples_test</span><span class="p">,</span> <span class="n">targets_test</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span>
         <span class="n">dataset</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">test_size</span><span class="p">,</span> <span class="n">seed</span>
